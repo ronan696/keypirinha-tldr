@@ -1,9 +1,9 @@
-<p align="center"><img alt="keypirinha-tldr" title="keypirinha-tldr" src="/assets/tldr_banner_readme.png" height="300" /></p>
+<p align="center"><img alt="keypirinha-tldr" title="keypirinha-tldr" src="/assets/tldr_banner_readme.png" width="500" /></p>
 
 This is keypirinha-tldr, a [tldr pages](https://tldr.sh) plugin for the
 [Keypirinha](http://keypirinha.com) launcher. Now, experience the comfort of navigating console commands in tldr pages right from your favourite launcher. 
 
-<p align="center"><img alt="keypirinha-tldr" title="keypirinha-tldr" src="/assets/screen_clipping.gif" height="400" /></p>
+<p align="left"><img alt="keypirinha-tldr" title="keypirinha-tldr" src="/assets/screen_clipping.gif" /></p>
 
 ## Install
 
