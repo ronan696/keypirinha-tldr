@@ -30,7 +30,7 @@ This plugin adds the following items to the [Catalog](http://keypirinha.com/glos
    Platforms supported by tldr are **linux**, **windows**, **osx** and **sunos**. <br/>
    If the command does not exist for the desired platform, the tldr page results for the command corresponding to the platform for which it exists, will be shown.
    - The default language is **en**, but can be modified in the plugin [configuration file](/src/tldr.ini). The default language can be overridden at runtime by using the `-L` option followed by the desired language. <br/>
-   Languages supported by tldr are **en**, **bs**, **da**, **de**, **es**, **fr**, **hbs**, **hi**, **id**, **it**, **ja**, **ko**, **ml**, **nl**, **no**, **pl**, **pt_BR**, **pt_PT**, **ru**, **sv**, **ta**, **th**, **tr**, **zh**, **zh_TW**. <br/>
+   Languages supported by tldr are **en**, **bs**, **da**, **de**, **es**, **fa**, **fr**, **hbs**, **hi**, **id**, **it**, **ja**, **ko**, **ml**, **nl**, **no**, **pl**, **pt_BR**, **pt_PT**, **ru**, **sv**, **ta**, **th**, **tr**, **zh**, **zh_TW**. <br/>
    When using the `-L` option, an error will be thrown if the the tldr page for a command does not exist the the desired language.
    
 
