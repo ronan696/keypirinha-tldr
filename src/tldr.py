@@ -41,6 +41,7 @@ class tldr(kp.Plugin):
         "da",
         "de",
         "es",
+        "fa",
         "fr",
         "hbs",
         "hi",
