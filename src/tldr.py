@@ -64,9 +64,9 @@ class tldr(kp.Plugin):
         "zh_TW",
     ]
     TLDR_ZIP_LINK = (
-        "https://raw.githubusercontent.com/tldr-pages/tldr-pages.github.io/master/assets/tldr.zip"
+        "https://raw.githubusercontent.com/tldr-pages/tldr-pages.github.io/main/assets/tldr.zip"
     )
-    TRANSLATION_URL = "https://github.com/tldr-pages/tldr/blob/master/CONTRIBUTING.md#translations"
+    TRANSLATION_URL = "https://github.com/tldr-pages/tldr/blob/main/CONTRIBUTING.md#translations"
     ISSUE_URL = "https://github.com/tldr-pages/tldr/issues/new?title=page%20request:%20{}"
 
     def __init__(self):
