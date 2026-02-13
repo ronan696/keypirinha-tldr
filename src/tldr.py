@@ -37,11 +37,17 @@ class tldr(kp.Plugin):
     PLATFORM_LIST = ["linux", "osx", "windows", "sunos"]
     LANGUAGE_LIST = [
         "en",
+        "ar",
+        "bn",
         "bs",
+        "ca",
+        "cs",
         "da",
         "de",
+        "el",
         "es",
         "fa",
+        "fi",
         "fr",
         "hbs",
         "hi",
@@ -49,23 +55,30 @@ class tldr(kp.Plugin):
         "it",
         "ja",
         "ko",
+        "lo",
         "ml",
+        "ne",
         "nl",
         "no",
         "pl",
         "pt_BR",
         "pt_PT",
+        "ro",
         "ru",
+        "sr",
         "sv",
         "ta",
         "th",
         "tr",
+        "uk",
+        "uz",
         "zh",
         "zh_TW",
     ]
-    TLDR_ZIP_LINK = (
-        "https://raw.githubusercontent.com/tldr-pages/tldr-pages.github.io/main/assets/tldr.zip"
-    )
+    TLDR_ZIP_URLS = [
+        "https://github.com/tldr-pages/tldr/releases/latest/download/tldr.zip",
+        "https://tldr.sh/assets/tldr.zip",
+    ]
     TRANSLATION_URL = "https://github.com/tldr-pages/tldr/blob/main/CONTRIBUTING.md#translations"
     ISSUE_URL = "https://github.com/tldr-pages/tldr/issues/new?title=page%20request:%20{}"
 
@@ -439,10 +452,26 @@ class tldr(kp.Plugin):
             if should_update_cache or not tldr_zip_exists or force:
                 self.commands = []
                 self._delete_old_pages()
-                urllib.request.urlretrieve(
-                    self.TLDR_ZIP_LINK,
-                    os.path.join(self.cache_path, "tldr.zip"),
-                )
+
+                download_success = False
+                exceptions = []
+                for url in self.TLDR_ZIP_URLS:
+                    try:
+                        urllib.request.urlretrieve(
+                            url,
+                            os.path.join(self.cache_path, "tldr.zip"),
+                        )
+                        download_success = True
+                        break
+                    except Exception as e:
+                        exceptions.append(f"{url}: {e}")
+                        continue
+
+                if not download_success:
+                    raise Exception(
+                        "Failed to download tldr.zip from any of the providers. Errors: "
+                        + "; ".join(exceptions)
+                    )
 
                 tldr_zip = zipfile.ZipFile(tldr_zip_path, "r")
                 required_pages = [
